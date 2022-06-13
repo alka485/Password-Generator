@@ -7,15 +7,15 @@ var dataSymbols   = "`~!@#$%^&*()-_=+[]{}|':;?/.,".split('');
 // Generate Password
 
 function generatePassword(){
-  // Prompt the User for their 'password length' and
-  // store it in variable
-  //validate the paasword length and make sure it's number between
-  //or equal to 8-128
-  //if password length greaterthan equal to 8 and 
-  //less than or equal to 128
-  //randomly select chracter
-  //validate that atleast one chracter choice is true
+  var userChoiceChracters = prompt("How many chracters would you like in our password?");
+  console.log(userChoiceChracters);  
 
+  if(userChoiceChracters>=8 && userChoiceChracters<=128){
+    userChoiceSymbols=confirm("Do you want to include symbols?");
+    console.log(userChoiceSymbols);
+  } else{
+    alert("password must atleast contain 8 to 128 chracters");
+  }
 }
 var generateBtn = document.querySelector("#generate");
 
