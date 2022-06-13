@@ -16,6 +16,32 @@ function generatePassword(){
   } else{
     alert("password must atleast contain 8 to 128 chracters");
   }
+
+  if(userChoiceSymbols == true || userChoiceSymbols== false){
+    var userChoiceNumbers = confirm("DO you want to include numbers?");
+    console.log(userChoiceNumbers);
+
+  if(userChoiceNumbers==true || userChoiceNumbers==false){
+    var userChoiceUpper = confirm("Do you want to include upper case letter?");
+    console.log(userChoiceUpper);
+
+  if(userChoiceUpper==true || userChoiceUpper==false){
+    var userChoiceLower = confirm("Do you want to include lower case ?");
+   console.log(userChoiceLower);
+  }
+  
+  if(userChoiceSymbols == false && userChoiceNumbers == false && userChoiceLower== false && userChoiceUpper==false){
+    alert("please select atleast one box !");
+  }
+  }
+
+
+
+
+
+
+
+
 }
 var generateBtn = document.querySelector("#generate");
 
