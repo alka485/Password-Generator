@@ -34,15 +34,16 @@ function generatePassword(){
     alert("please select atleast one box !");
   }
   }
-
-
-
-
-
-
-
-
 }
+
+
+var data =''.concat(dataLowercase,dataNumbers,dataSymbols,dataUppercase);
+    console.log(data.length);
+    var passwordLength = userChoiceChracters;
+    console.log(passwordLength);
+    var newPassword='';
+
+    
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
