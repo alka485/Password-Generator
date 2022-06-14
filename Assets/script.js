@@ -43,6 +43,13 @@ var data =''.concat(dataLowercase,dataNumbers,dataSymbols,dataUppercase);
     console.log(passwordLength);
     var newPassword='';
 
+    for(var i=0 ; i<passwordLength; i++){
+      newPassword += data[Math.floor(Math.random()*data.length)];
+      console.log(newPassword);
+    }
+    return newPassword;
+
+}
     
 var generateBtn = document.querySelector("#generate");
 
