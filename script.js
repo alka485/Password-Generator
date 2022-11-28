@@ -7,9 +7,9 @@ var dataSymbols = "`~!@#$%^&*()-_=+[]{}|':;?/.,".split('');
 // Generate Password
 
 function generatePassword() {
-  var userChoiceChracters = prompt("How many chracters would you like in our password?");
+  var userChoiceCharacter = prompt("How many chracters would you like in our password?");
 
-  if (userChoiceChracters >= 8 && userChoiceChracters <= 128) {
+  if (userChoiceCharacter >= 8 && userChoiceCharacter <= 128) {
     userChoiceSymbols = confirm("Do you want to include symbols?");
   } else {
     alert("password must atleast contain 8 to 128 chracters");
@@ -26,14 +26,29 @@ function generatePassword() {
       }
     }
   }
-  var data = ''.concat(dataLowercase, dataNumbers, dataSymbols, dataUppercase);
-  var passwordLength = userChoiceChracters;
-  var newPassword = '';
-  //for loop
-  for (var i = 0; i < passwordLength; i++) {
-    newPassword += data[Math.floor(Math.random() * data.length)];
+  var passwordCharacters =[]
+  if(userChoiceSymbols){
+    passwordCharacters =passwordCharacters.concat(dataSymbols);
   }
-  return newPassword;
+
+  if(userChoiceNumbers){
+    passwordCharacters =passwordCharacters.concat(dataNumbers);
+  }
+  if(userChoiceUpper){
+    passwordCharacters = passwordCharacters.concat(dataUppercase);
+  }
+  if(userChoiceLower){
+    passwordCharacters = passwordCharacters.concat(dataLowercase);
+  }
+
+  
+  var passwordLength = userChoiceCharacter;
+var newPassword = '';
+//for loop
+for (var i = 0; i < passwordLength; i++) {
+  newPassword += passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+}
+return newPassword;
 
 }
 
